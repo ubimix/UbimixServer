@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://maven.apache.org/POM/4.0.0"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.ubimix.server.poms</groupId>
+    <artifactId>org.ubimix.server.root</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+    <name>${project.artifactId}</name>
+    <description>UbimixServer (OSGi project)</description>
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <packaging>pom</packaging>
+    <modules>
+        <module>projects</module>
+    </modules>
+</project>

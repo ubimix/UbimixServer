@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.5"?>
+
+<target name="org.ubimix.server">
+<locations>
+<location path="${workspace_loc}/UbimixServer/workdir/runner/bundles" type="Directory"/>
+<location path="${eclipse_home}" type="Profile"/>
+</locations>
+</target>

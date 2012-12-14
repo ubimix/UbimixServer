@@ -1,0 +1,4 @@
+--platform=equinox
+--executor=zip
+--workingDirectory=./UbimixServer-dist
+./UbimixServer-internal.composite

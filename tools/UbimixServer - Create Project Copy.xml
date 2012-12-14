@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<project name="project" default="all">
+	<dirname property="workspace" file="${ant.file}/../../" />
+
+	<property name="project.new" value="UbimixServer2" />
+	<property name="package.new" value="org.ubimix.server2" />
+	<property name="module.new" value="moduleB" />
+
+	<property name="project.old" value="UbimixServer" />
+	<property name="package.old" value="org.ubimix.server" />
+	<property name="module.old" value="app" />
+
+	<target name="all">
+		<!-- Prepare directory -->
+		<mkdir dir="${workspace}/${project.new}" />
+
+		<!-- Prepare properties -->
+		<property name="tmp.properties" value="${workspace}/${project.new}/tmp.properties" />
+		<propertyfile file="${tmp.properties}">
+			<entry key="packagepath" value="${package.new}" />
+		</propertyfile>
+		<replace file="${tmp.properties}">
+			<replacefilter token="." value="/" />
+		</replace>
+		<loadproperties srcfile="${tmp.properties}" />
+		<delete file="${tmp.properties}" />
+
+		<!-- Real copy/replace operations -->
+		<copy todir="${workspace}/${project.new}" overwrite="false" includeemptydirs="false">
+			<fileset dir="${workspace}/${project.old}">
+				<exclude name="module*/**/.classpath" />
+				<exclude name="module*/**/.project" />
+				<exclude name="module*/**/.settings" />
+				<exclude name="module*/**/.settings/**" />
+				<exclude name="workdir/runner" />
+				<exclude name="workdir/runner/**" />
+				<exclude name=".git/**" />
+				<exclude name=".hg/**" />
+				<exclude name="**/.svn" />
+				<exclude name="**/.svn/**" />
+				<exclude name="**/target" />
+				<exclude name="**/target/**" />
+				<exclude name="**/UbimixServerClientApp" />
+				<exclude name="**/UbimixServerClientApp/**" />
+
+				<include name="**" />
+				<include name=".project" />
+			</fileset>
+			<filtermapper>
+				<replacestring from="${package.old}" to="${package.new}" />
+				<replacestring from="${project.old}" to="${project.new}" />
+				<replacestring from="${module.old}" to="${module.new}" />
+                <replacestring from="java/${package.new}" to="java/${packagepath}" />
+                <replacestring from="resources/${package.new}" to="resources/${packagepath}" />
+			</filtermapper>
+		</copy>
+		<replace dir="${workspace}/${project.new}">
+			<include name="**" />
+			<exclude name=".git" />
+			<replacefilter token="${package.old}" value="${package.new}" />
+			<replacefilter token="${project.old}" value="${project.new}" />
+			<replacefilter token="${module.old}" value="${module.new}" />
+		</replace>
+	</target>
+
+</project>

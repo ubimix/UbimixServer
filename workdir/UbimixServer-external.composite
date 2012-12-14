@@ -1,0 +1,9 @@
+# Basic profiles
+scan-composite:mvn:org.ops4j.pax.runner.profiles/core//composite
+scan-composite:mvn:org.ops4j.pax.runner.profiles/config//composite
+scan-composite:mvn:org.ops4j.pax.runner.profiles/compendium//composite
+scan-composite:mvn:org.ops4j.pax.runner.profiles/log//composite
+scan-composite:mvn:org.ops4j.pax.runner.profiles/web//composite
+# scan-composite:mvn:org.ops4j.pax.runner.profiles/war//composite
+scan-bundle:mvn:org.ops4j.pax.confman/pax-confman-propsloader
+scan-bundle:mvn:org.apache.xmlcommons/com.springsource.org.apache.xmlcommons/1.3.4

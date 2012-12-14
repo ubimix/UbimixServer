@@ -1,0 +1,2 @@
+scan-composite:./UbimixServer-external.composite
+scan-bundle:mvn:org.ubimix.server.app/org.ubimix.server.app.gwtapp/0.1.0-SNAPSHOT

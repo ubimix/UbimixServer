@@ -1,0 +1,4 @@
+--platform=equinox
+--executor=noop
+--workingDirectory=./runner
+./UbimixServer-external.composite
